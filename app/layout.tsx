@@ -1,11 +1,13 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter, Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { BackgroundEffects } from '@/components/background-effects'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const geist = Geist({ subsets: ["latin"], variable: '--font-geist' });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: '--font-geist-mono' });
 
 export const metadata: Metadata = {
   title: 'DINZ - Custom Software Development & Products',
@@ -21,21 +23,8 @@ export const metadata: Metadata = {
     siteName: 'DINZ',
   },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/dinz.png',
+    apple: '/dinz.png',
   },
     generator: 'v0.app'
 }
@@ -47,7 +36,7 @@ export const viewport = {
   userScalable: true,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: dark)', color: '#060612' },
   ],
 }
 
@@ -57,8 +46,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans antialiased`}>
+    <html lang="en" className={`${inter.variable} ${geist.variable} ${geistMono.variable} dark scroll-smooth`} suppressHydrationWarning>
+      <body className="text-foreground antialiased min-h-screen flex flex-col relative">
+        <BackgroundEffects />
         {children}
         <Analytics />
       </body>
