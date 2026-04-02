@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -13,7 +14,7 @@ export function Footer() {
           
           {/* Brand Col */}
           <div className="md:col-span-2">
-            <img src="/dinz-logo.png" alt="DINZ" className="h-8 mb-6 opacity-80 hover:opacity-100 transition-opacity" />
+            <Image src="/dinz-logo.png" alt="DINZ" width={160} height={32} className="h-8 w-auto mb-6 opacity-80 hover:opacity-100 transition-opacity" />
             <p className="text-white/40 text-sm leading-relaxed max-w-sm mb-6">
               Engineering the future of software. We build scalable, high-performance applications and platforms for companies that demand excellence.
             </p>

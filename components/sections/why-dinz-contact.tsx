@@ -1,6 +1,7 @@
 'use client';
 
 import { Mail, Instagram, ArrowRight, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 import { useStaggerAnimation, useCountUp } from '@/hooks/use-scroll-animation';
 
 const reasons = [
@@ -62,7 +63,7 @@ export function WhyDinzSection() {
                 <div className="absolute inset-0 rounded-full border border-purple-500/20 animate-[spin_60s_linear_infinite]" style={{ borderStyle: 'dashed' }} />
                 <div className="w-3/4 h-3/4 rounded-full border border-blue-500/20 animate-[spin_40s_linear_infinite_reverse]" style={{ borderStyle: 'dashed' }} />
                 <div className="w-1/2 h-1/2 rounded-full border border-cyan-500/20 bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center shadow-[0_0_50px_rgba(99,179,237,0.1)]">
-                   <img src="/dinz-logo.png" alt="DINZ mark" className="h-8 md:h-12 w-auto mb-2 opacity-80" />
+                   <Image src="/dinz-logo.png" alt="DINZ mark" width={120} height={48} className="h-8 md:h-12 w-auto mb-2 opacity-80" />
                    <span className="text-xs text-white/30 uppercase tracking-[0.3em] font-medium">Core</span>
                 </div>
              </div>
@@ -78,9 +79,9 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative py-16 sm:py-24 overflow-hidden">
       {/* Immersive mesh gradient background */}
-      <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay z-0" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] pointer-events-none blur-[150px] opacity-40 -z-10 animate-gradient-shift">
-         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 rounded-full mix-blend-screen" />
+      <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] pointer-events-none blur-[150px] opacity-30 -z-10 animate-gradient-shift will-change-transform">
+         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

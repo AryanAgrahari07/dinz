@@ -66,7 +66,7 @@ function FloatingParticles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {particles.map((style, i) => (
-        <div key={i} className="absolute rounded-full bg-blue-400/20 shadow-[0_0_10px_rgba(96,165,250,0.3)]" style={style} />
+        <div key={i} className="absolute rounded-full bg-blue-400/20 shadow-[0_0_10px_rgba(96,165,250,0.3)] will-change-transform" style={style} />
       ))}
     </div>
   );

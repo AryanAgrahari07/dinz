@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { BackgroundEffects } from '@/components/background-effects'
+import { SmoothScrolling } from '@/components/smooth-scrolling'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -46,11 +47,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${geist.variable} ${geistMono.variable} dark scroll-smooth`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${geist.variable} ${geistMono.variable} dark`} suppressHydrationWarning>
       <body className="text-foreground antialiased min-h-screen flex flex-col relative">
-        <BackgroundEffects />
-        {children}
-        <Analytics />
+        <SmoothScrolling>
+          <BackgroundEffects />
+          {children}
+          <Analytics />
+        </SmoothScrolling>
       </body>
     </html>
   )

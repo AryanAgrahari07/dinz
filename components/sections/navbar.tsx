@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -63,10 +64,13 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <img
+            <Image
               src="/dinz-logo.png"
               alt="DINZ"
-              className={`object-contain transition-all duration-500 ${
+              width={160}
+              height={40}
+              priority
+              className={`object-contain transition-all duration-500 w-auto ${
                 scrolled ? 'h-7 sm:h-8' : 'h-8 sm:h-10'
               }`}
             />
